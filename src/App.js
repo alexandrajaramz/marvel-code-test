@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Filters from './components/Filters';
+import CharacterList from './components/CharacterList';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class App extends React.Component {
 
     this.state = {
       characters: [],
-      characterQuery: ''
+      characterQuery: '',
+      loading: true
     }
 
     this.searchCharacter = this.searchCharacter.bind(this);
@@ -25,7 +27,8 @@ class App extends React.Component {
 
     fetch(url).then(response => response.json()).then(data => {
       this.setState({
-        characters: data.data.results
+        characters: data.data.results,
+        loading: false
       })
     })
   }
@@ -49,7 +52,9 @@ class App extends React.Component {
           </nav>
         </header>
         <main className="app__main">
-          main
+          <CharacterList
+            characters={this.state.characters} 
+            loading={this.state.loading} />
         </main>
         <footer className="app__footer">
           Data provided by Marvel. © 2014 Marvel
