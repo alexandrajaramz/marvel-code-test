@@ -1,12 +1,13 @@
 import React from 'react';
 import Modal from './Modal';
+import '../styles/CharacterList.scss';
 
 class CharacterList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
       show: false,
-      selectedCharacter: {}
+      selectedCharacter: null
     };
 
     this.openModal = this.openModal.bind(this);
@@ -22,7 +23,7 @@ class CharacterList extends React.Component {
   hideModal = () => {
     this.setState({ 
       show: false,
-      selectedCharacter: {}
+      selectedCharacter: null
     });
   };
 
@@ -53,10 +54,12 @@ class CharacterList extends React.Component {
             );
           })}
         </ul>
-        <Modal
-          show={this.state.show} 
-          handleClose={this.hideModal} 
-          character={this.state.selectedCharacter} />
+        {this.state.selectedCharacter ? (
+          <Modal
+            show={this.state.show} 
+            handleClose={this.hideModal} 
+            character={this.state.selectedCharacter} />
+        ) : null}
       </React.Fragment>
     )
   };  

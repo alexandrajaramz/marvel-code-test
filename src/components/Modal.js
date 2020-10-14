@@ -11,9 +11,9 @@ const Modal = ({ handleClose, show, character}) => {
         <li>{character.id}</li>
         <li>{character.description}</li>
 
-        <li>{`comics which feature this character: ${character.comics}`}</li>
-        <li>{`series in which this character appears: ${character.series}`}</li>
-        <li>{`stories in which this character appears: ${character.stories}`}</li>       
+        <li>Comics which feature this character: {character.comics.available}</li>
+        <li>Series in which this character appears: {character.series.available}</li>
+        <li>Stories in which this character appears: {character.stories.available}</li>       
       </ul>
       <button onClick={handleClose}>close</button>
     </div>
