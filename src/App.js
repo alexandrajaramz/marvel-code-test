@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/App.scss';
 import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
 
@@ -45,6 +45,7 @@ class App extends React.Component {
       <div className="app">
         <header className="app__header">
           <h1 className="header__title">Marvel Finder</h1>
+          <h2 className="header__subtitle">Find your favorite Marvel character</h2>
           <nav className="header__nav">
             <Filters 
               searchCharacter={this.searchCharacter}
@@ -57,7 +58,7 @@ class App extends React.Component {
             loading={this.state.loading} />
         </main>
         <footer className="app__footer">
-          Data provided by Marvel. © 2014 Marvel
+          Developed by Alexandra Jara. Data provided by Marvel © 2014 Marvel
         </footer>
       </div>
     );

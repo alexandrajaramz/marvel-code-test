@@ -43,12 +43,12 @@ class CharacterList extends React.Component {
         <ul className="main__list">
           {characters.map((character, i) => {
             return (
-              <li key={i}>
-                <div>
-                  <img src={`${character.thumbnail.path}/landscape_xlarge.jpg`} alt={`Official art for ${character.name}`}/>
-                  <p>{character.name}</p>
-                  <p>{character.description}</p>
-                  <button onClick={() => this.openModal(character)}>View details</button>
+              <li className="list__card"key={i}>
+                <div className="card__wrapper">
+                  <img className="card__img" src={`${character.thumbnail.path}/landscape_xlarge.jpg`} alt={`Official art for ${character.name}`}/>
+                  <p className="card__name">{character.name}</p>
+                  <p className="card__description">{character.description}</p>
+                  <button className="card__btn" onClick={() => this.openModal(character)}>View details</button>
                 </div>
               </li>
             );

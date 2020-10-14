@@ -1,0 +1,21 @@
+.header__form {
+
+}
+
+.form-name__input {
+  height: 24px;
+  width: 260px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+
+  @media all and (min-width: 1080px){
+    height: 36px;
+    width: 250px;
+    font-size: 18px;
+  }
+}
+
+.fa-search {
+  margin: 10px;
+}
